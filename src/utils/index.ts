@@ -1,1 +1,2 @@
-export * from './cdn'
+export * from './cdn';
+export * from './encode';
