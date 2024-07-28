@@ -88,6 +88,18 @@ const handleChangeVersion = (pkg: string, e: Event) => {
     padding: 10px 16px;
     box-shadow: 0 0 4px #0000004d;
     z-index: 10;
+    overflow-x: auto;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 4px;
+        &-thumb {
+            background: #ccc;
+        }
+        &-thumb:hover {
+            background: #bbb;
+        }
+    }
     &_right {
         display: flex;
         align-items: center;
@@ -98,9 +110,14 @@ const handleChangeVersion = (pkg: string, e: Event) => {
         align-items: center;
         height: 30px;
         &__item {
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             margin-left: 16px;
+            &:first-child {
+                margin-left: 0;
+            }
+
         }
         &__select {
             width: 120px;
