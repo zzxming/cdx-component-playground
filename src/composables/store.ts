@@ -28,7 +28,7 @@ export const useReplStore = (options: ReplOptions): MyReplStore => {
         },
         ...options,
     };
-console.log()
+
     const versions = reactive({ ...options.versions });
     const { importMap, productionMode } = useVueImportMap({
         vueVersion: versions.vue,
@@ -91,12 +91,11 @@ console.log()
         }
         return `src/${name}`
     }
-    
     const serialize = () => {
         const storeFiles = files.value;
         const dataFiles: Record<string, string> = {};
         for (const [name, value] of Object.entries(storeFiles)) {
-            dataFiles[wrapFilename(name)] = value.code;
+            dataFiles[name] = value.code;
         }
         return '#' + utoa(JSON.stringify({
             ...dataFiles,
@@ -112,7 +111,6 @@ console.log()
             saved = JSON.parse(atou(serializedState))
         } catch (err) {
             console.error(err)
-            alert('Failed to load code from URL.')
             return
         }
         if (saved.__versions) {
@@ -123,14 +121,14 @@ console.log()
         }
 
         for (const [name, code] of Object.entries(saved)) {
-            files.value[wrapFilename(name)] = new File(name, code)
+            const filename = wrapFilename(name);
+            files.value[filename] = new File(filename, code)
         }    
         files.value[mainFile].hidden = true;
         files.value[setupFile].hidden = true;
         for (const file of Object.values(files.value)) {
             compileFile(store, file);
         }
-    
         store.mainFile = mainFile;
         store.setActive(appFile);
     }
