@@ -44,7 +44,7 @@ export const useReplStore = (options: ReplOptions): MyReplStore => {
     const builtinImportMap = computed(() => ({
         imports: {
             ...importMap.value.imports,
-            'cdx-component': getCdnUrl('cdx-component', 'index.esm.js'),
+            'cdx-component': getCdnUrl('cdx-component', 'index.esm.js', versions['cdx-component']),
         },
         scopes: {
             ...importMap.value.scopes,
@@ -90,7 +90,7 @@ export const useReplStore = (options: ReplOptions): MyReplStore => {
             );
 
             compileFile(store, files.value[setupFile]);
-        },
+},
         { immediate: true, deep: true }
     );
 
