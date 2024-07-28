@@ -45,6 +45,8 @@ const handleChangeVersion = (pkg: string, e: Event) => {
     const version = select.options[select.selectedIndex].value;
     depVersions[pkg].active = version;
     props.store.versions[pkg] = version;
+    
+    history.replaceState({}, '', props.store.serialize())
 };
 </script>
 
