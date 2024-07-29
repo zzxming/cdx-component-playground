@@ -88,6 +88,13 @@ export const useReplStore = (options: ReplOptions): MyReplStore => {
     { immediate: true, deep: true },
   );
 
+  const compileFiles = () => {
+    for (const file of Object.values(files.value)) {
+      compileFile(store, file);
+    }
+    store.mainFile = mainFile;
+    store.setActive(appFile);
+  };
   const wrapFilename = (name: string) => {
     if (name === IMPORTMAP || name === TSCONFIG || name.startsWith('src/')) {
       return name;
@@ -115,7 +122,7 @@ export const useReplStore = (options: ReplOptions): MyReplStore => {
     }
     catch (error) {
       console.error(error);
-      return;
+      return compileFiles();
     }
     if (saved.__versions) {
       for (const [name, version] of Object.entries(saved.__versions)) {
@@ -130,11 +137,7 @@ export const useReplStore = (options: ReplOptions): MyReplStore => {
     }
     files.value[mainFile].hidden = true;
     files.value[setupFile].hidden = true;
-    for (const file of Object.values(files.value)) {
-      compileFile(store, file);
-    }
-    store.mainFile = mainFile;
-    store.setActive(appFile);
+    compileFiles();
   };
   const setVersion = (pkg: string, version: string) => {
     store.versions[pkg] = version;
