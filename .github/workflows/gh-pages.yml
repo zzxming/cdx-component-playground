@@ -1,35 +1,35 @@
 name: GitHub Pages
 on:
-    push:
-        branches:
-            - master
-    workflow_dispatch: {}
+  push:
+    branches:
+      - master
+  workflow_dispatch: {}
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v3
-              with:
-                  fetch-depth: 0
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-            - name: Install pnpm
-              uses: pnpm/action-setup@v3
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
 
-            - name: Set node
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 20
-                  registry-url: https://registry.npmjs.org/
-                  cache: pnpm
+      - name: Set node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+          cache: pnpm
 
-            - name: Install deps
-              run: pnpm install
+      - name: Install deps
+        run: pnpm install
 
-            - name: Build
-              run: pnpm run build
+      - name: Build
+        run: pnpm run build
 
-            - name: Deploy to GitHub Pages
-              uses: JamesIves/github-pages-deploy-action@v4
-              with:
-                  folder: ./dist
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ./dist

@@ -5,5 +5,5 @@ const msg = ref('Hello World!');
 </script>
 
 <template>
-    <h1>{{ msg }}</h1>
+  <h1>{{ msg }}</h1>
 </template>

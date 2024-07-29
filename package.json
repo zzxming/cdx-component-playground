@@ -1,19 +1,33 @@
 {
-    "name": "cdx-component-playground",
-    "type": "module",
-    "packageManager": "pnpm@8.14.3",
-    "scripts": {
-        "build": "vite build",
-        "preview": "vite preview",
-        "dev": "vite"
-    },
-    "dependencies": {
-        "@vue/repl": "^4.1.2",
-        "vue": "3.4.15"
-    },
-    "devDependencies": {
-        "@vitejs/plugin-vue": "^4.5.2",
-        "less": "^4.2.0",
-        "vite": "^5.0.10"
-    }
+  "name": "cdx-component-playground",
+  "type": "module",
+  "packageManager": "pnpm@8.14.3",
+  "scripts": {
+    "build": "vite build",
+    "preview": "vite preview",
+    "dev": "vite",
+    "lint": "eslint . --cache",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@vue/repl": "^4.1.2",
+    "vue": "3.4.15"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.17.0",
+    "@typescript-eslint/parser": "^7.17.0",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "@zzxming/eslint-config": "^0.0.10",
+    "eslint-merge-processors": "^0.1.0",
+    "eslint-plugin-jsonc": "^2.16.0",
+    "eslint-plugin-markdown": "^5.1.0",
+    "eslint-plugin-vue": "^9.27.0",
+    "eslint-plugin-yml": "^1.14.0",
+    "jsonc-eslint-parser": "^2.4.0",
+    "less": "^4.2.0",
+    "typescript": "^5.5.4",
+    "vite": "^5.0.10",
+    "vue-eslint-parser": "^9.4.3",
+    "yaml-eslint-parser": "^1.2.3"
+  }
 }

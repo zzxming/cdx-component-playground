@@ -1,22 +1,22 @@
 {
-    "compilerOptions": {
-        "target": "esnext",
-        "module": "esnext",
-        "allowJs": false,
-        "strict": true,
-        "jsx": "preserve",
-        "importHelpers": true,
-        "moduleResolution": "bundler",
-        "skipLibCheck": true,
-        "noUnusedLocals": true,
-        "experimentalDecorators": true,
-        "resolveJsonModule": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "sourceMap": true,
-        "baseUrl": ".",
-        "outDir": "dist",
-        "types": ["vite/client"],
-        "lib": ["esnext", "dom"]
-    }
+  "compilerOptions": {
+    "target": "esnext",
+    "jsx": "preserve",
+    "lib": ["esnext", "dom"],
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "types": ["vite/client"],
+    "allowJs": false,
+    "strict": true,
+    "noUnusedLocals": true,
+    "importHelpers": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
 }
