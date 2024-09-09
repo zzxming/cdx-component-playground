@@ -1,7 +1,7 @@
 {
   "name": "cdx-component-playground",
   "type": "module",
-  "packageManager": "pnpm@8.14.3",
+  "packageManager": "pnpm@9.9.0",
   "scripts": {
     "build": "vite build",
     "preview": "vite preview",
@@ -17,7 +17,7 @@
     "@typescript-eslint/eslint-plugin": "^7.17.0",
     "@typescript-eslint/parser": "^7.17.0",
     "@vitejs/plugin-vue": "^4.5.2",
-    "@zzxming/eslint-config": "^0.0.10",
+    "@zzxming/eslint-config": "^0.0.14",
     "eslint-merge-processors": "^0.1.0",
     "eslint-plugin-jsonc": "^2.16.0",
     "eslint-plugin-markdown": "^5.1.0",
