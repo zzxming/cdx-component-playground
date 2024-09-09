@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import Monaco from '@vue/repl/monaco-editor';
-import { OutputModes, Repl } from '@vue/repl';
+import type { OutputModes } from '@vue/repl';
+import { Repl } from '@vue/repl';
 import Header from './components/header.vue';
 import { useReplStore } from './composables';
 

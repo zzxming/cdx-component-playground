@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { onMounted, reactive } from 'vue';
 import { getCdxComponentVersions, getTSVersions, getVueVersions } from '../utils';
-import { MyReplStore } from '../composables';
+import type { MyReplStore } from '../composables';
 
 const props = defineProps<{
   store: MyReplStore;
